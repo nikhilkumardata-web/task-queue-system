@@ -1,24 +1,23 @@
-# task-queue-system
-Distributed Task Queue System using Python
-# Distributed Task Queue System (Celery-Style Backend)
+# Distributed Task Queue System
 
 ## Overview
-A scalable backend system for handling asynchronous tasks using Python and queue-based processing.
+This project implements a basic distributed task queue system using Python.
+
+It demonstrates how backend systems process asynchronous jobs using queues and worker processes.
 
 ## Architecture
-Client → API → Queue → Worker → Result
+Client → FastAPI → Queue → Worker → Result
 
 ## Features
-- Asynchronous task execution
-- Distributed workers
+- Task submission via API
 - Queue-based processing
-- Scalable backend design
+- Background worker execution
+- Unique task tracking
 
 ## Tech Stack
-- Python
-- FastAPI
-- Redis
-- Celery
+Python, FastAPI
 
-## Description
-This project demonstrates how distributed systems handle background jobs using message queues and worker processes.
+## How it works
+1. API receives task request
+2. Task is pushed to queue
+3. Worker processes tasks asynchronously
