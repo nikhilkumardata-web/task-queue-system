@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from tasks import add_task
+from queue_system import task_queue
 
 app = FastAPI()
 
@@ -8,6 +8,6 @@ def home():
     return {"message": "Task Queue System Running"}
 
 @app.post("/task")
-def create_task(x: int, y: int):
-    result = add_task(x, y)
-    return {"result": result}
+def add_task(x: int, y: int):
+    task_id = task_queue.add_task(x, y)
+    return {"task_id": task_id}
